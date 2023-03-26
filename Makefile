@@ -1,5 +1,3 @@
-hello:
-	echo "Hello"
 
 build:
 	go build -v -o bin\main cmd\http\main.go
