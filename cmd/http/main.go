@@ -27,6 +27,9 @@ func main() {
 
 	router.GET("/api/v1/menu", menuService.GetMenu)
 	router.GET("/api/v1/menu/item/:id", menuService.GetMenuItem)
+	router.POST("/api/v1/menu/item", menuService.AddMenuItem)
+	router.PATCH("/api/v1/menu/item/:id", menuService.UpdateMenuItem)
+	router.DELETE("/api/v1/menu/item/:id", menuService.DeleteMenuItem)
 	srv := &http.Server{
 		Handler: router,
 		Addr:    ":8000",
@@ -63,7 +66,7 @@ func main() {
 	os.Exit(0)
 }
 
-var db map[string]usecase.Item = map[string]usecase.Item{
+var db map[string]*usecase.Item = map[string]*usecase.Item{
 	"123": {Id: "123", Name: "pasta", Price: 120, Note: "mild", Type: "italian"},
 	"345": {Id: "345", Name: "noodles", Price: 100, Note: "spicy", Type: "asian"},
 	"876": {Id: "876", Name: "pavbhaji", Price: 80, Note: "hot and spicy", Type: "indian"},
