@@ -19,9 +19,7 @@ func NewService(dataProvider usecase.DataProviderService) MenuService {
 }
 
 func (ms *MenuService) GetMenu(c *gin.Context) {
-
 	c.JSON(http.StatusOK, ms.dataProvider.GetMenu())
-
 }
 
 func (ms *MenuService) GetMenuItem(c *gin.Context) {
