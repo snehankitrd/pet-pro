@@ -1,6 +1,5 @@
 # Pet Project for Gin
 
-Translations:
 
 ## Overview
 
